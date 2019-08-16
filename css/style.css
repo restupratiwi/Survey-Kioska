@@ -1,0 +1,254 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	margin:0;
+	padding: 0;
+	text-align: center;
+	background: url(../img/perpus01.jpeg);
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	margin:0;
+	padding: 0;
+	
+}
+
+
+/*bagian header*/
+
+.wrap .container {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 0;
+  position: relative;
+  z-index: 0;
+  padding: 5px;
+  background: #02132b;
+}
+
+.logo{
+	padding-left: 30px;
+}
+
+.wrap .container .judul{
+  font-family: "Merriweather Sans",sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    padding-left: 45px;
+    text-align: left;
+    color: white;
+}
+
+.wrap .container .visi{
+    text-align: left;
+    font-family: "Merriweather Sans",sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    padding-left: 100px;
+    color: white;
+    padding-top: 20px;
+  
+}
+/*akhir header*/
+
+ 
+/*bagian header2*/
+.wrap  .surveysingkat {
+	background-color: transparent;
+	color: black ;
+	height: auto;
+	width: 100%;
+	padding:  0 0 0 0px;
+	text-align: center;
+	float: center;
+	margin-top: 40px;
+}
+
+.wrap  h2{
+	color: #032359 ;
+	font-size: 18pt;
+	font-family: "arial", sans-serif;
+	text-align: center;
+	font-weight: bold;
+}
+
+.q-gambar{
+  width: 80px;
+
+}
+
+.pilihan h3{
+	color: #032359;
+	font-size: 18pt;
+	font-family:"arial",sans-serif;
+	font-weight: bold;
+}
+
+.wrap .pilihan .container {
+	background: transparent;
+	height: auto;
+	width: 100%;
+	float: center;
+	margin: 5px;
+	margin-top: 30px;
+	margin-bottom: 0px;
+	padding:5px;
+	padding-bottom: 0;
+}
+
+
+.wrap .pilihan .box{
+	width:320px;
+	height:auto;
+	background: #091b87;
+	color: white;
+	font-size: 16pt;
+	font-family: "Merriweather Sans",sans-serif;
+	padding: 20px;
+	border-radius: 0;
+	display: block;
+    letter-spacing: 1px;
+    margin-left:auto;
+	margin-right:auto;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.col-lg-4{
+	display: inline-grid;
+}
+
+.container .p-gambar{
+	width: 320px;
+	height: 200px;
+	border-radius:0px;
+}
+
+/*--------------------------Halaman Terima Kasih-----------------------------*/
+.wrap .terimakasih {
+	margin-top: 150px;
+	position: center;
+	font-size: 80pt;
+	color: green;
+	letter-spacing: 5px;
+} 
+
+.wrap .paragraf{
+	width:auto;
+	height:auto;
+	margin-top: 40px;
+	font-size: 16pt;
+	color: #032359;
+	background:transparent;
+}
+
+.wrap footer {
+	color: white;
+	background: transparent;
+	font-size: 1em;
+	width: 100%;
+	padding: 10px;
+	height: 90px;
+	font-size: 16pt;
+	margin-top: 15px;
+	position: absolute;
+	line-height: 40px;
+	bottom:0px;
+}
+ /*----------------------------Bagian Spinner Loading-----------------------------*/
+.ring{
+	position: absolute;
+	top: 60%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	width: 145px;
+	height: 145px;
+	background: transparent;
+	border: 3px solid blue;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 150px;
+	font-family: sans-serif;
+	font-size: 20px;
+	color: yellow;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	text-shadow: 0 0 10px yellow;
+	box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.ring:before{
+	content:'';
+	position: absolute;
+	top: -2px;
+	left: -3px;
+	right: -2px;
+	width: 145px;
+	height: 145px;
+
+	border: 3px solid transparent;
+	border-top: 3px solid yellow;
+	border-right: 3px solid yellow;
+	border-radius: 50%;
+	animation: animateCircle 2s linear infinite;
+}
+
+span{
+	display: block;
+	position: absolute;
+	top: calc(50%);
+	left: 50%;
+	top: 50%;
+	width: 50%;
+	height: 4px;
+	background-color: transparent;
+	transform-origin:left;
+	animation: animate 2s linear infinite;
+}
+
+span:before{
+	content: '';
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	top:0px;
+	right: -8px;
+	box-shadow: 0 0 20px yellow;
+}
+
+@keyframes animateCircle{
+	0%{
+		transform: rotate(0deg);
+	}100%{
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes animate{
+	0%{
+		transform: rotate(40deg);
+	}100%{
+		transform: rotate(398deg);
+	}
+}
+
+/*---------------------------------------Resolusi Layar----------------------------------*/
+@media screen and (max-width:1440px){
+
+  #maincontent{
+    width: auto;
+    float: none;
+  }
+  #sidebar{
+    width: auto;
+    float: none;
+  }
+}
+
