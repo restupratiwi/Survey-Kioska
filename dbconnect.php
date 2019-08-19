@@ -11,7 +11,6 @@ try {
 	echo "Sukses terhubung ke basis data $dbname pada host $host.";
 	}
 catch (PDOException $pe) {
-	die("Tidak dapat terhubung ke basis data $dbname :" . $pe-
-	>getMessage());
+	die("Tidak dapat terhubung ke basis data $dbname :" . $pe->getMessage());
 }
 ?>

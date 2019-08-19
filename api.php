@@ -1,6 +1,6 @@
 <?php
 # Web Service POST MySQL
-# Membuat data dengan POST: Uji dengan membuka http://localhost/praktikumweb/api/mahasiswa menggunakan metode POST. Data nama dan npm harus disertakan
+# Membuat data dengan POST: Uji dengan membuka http://localhost/survey-kioska/api.php/pertanyaan menggunakan metode POST. Data harus disertakan
 # ws-json-post.php
 # Gunakan aplikasi Postman untuk pengujian API/Web Service | www.getpostman.com
 
@@ -26,15 +26,18 @@ function process_post($param) {
     if((count($param) == 1) and ($param[0] == "pertanyaan")) {
         require_once 'dbconfig.php';
 
-        $dataQ1 = (isset($_POST['q1']) ? $_POST['q1'] : NULL);
-        $dataQ2 = (isset($_POST['q2']) ? $_POST['q2'] : NULL);
-        $dataQ3 = (isset($_POST['q3']) ? $_POST['q3'] : NULL);
-        $dataQ4 = (isset($_POST['q4']) ? $_POST['q4'] : NULL);
-        $dataQ5 = (isset($_POST['q5']) ? $_POST['q5'] : NULL);
-        $dataQ6 = (isset($_POST['q6']) ? $_POST['q6'] : NULL);
-        $dataQ7 = (isset($_POST['q7']) ? $_POST['q7'] : NULL);
-        $dataQ8 = (isset($_POST['q8']) ? $_POST['q8'] : NULL);
-        $dataQ9 = (isset($_POST['q9']) ? $_POST['q9'] : NULL);
+        $dataKategori = (isset($_POST['kategori']) ? $_POST['kategori'] : NULL);
+        $dataMesin = (isset($_POST['mesin']) ? $_POST['mesin'] : NULL);
+        $dataQ01 = (isset($_POST['q1']) ? $_POST['q1'] : NULL);
+        $dataQ01 = (isset($_POST['q1']) ? $_POST['q1'] : NULL);
+        $dataQ02 = (isset($_POST['q2']) ? $_POST['q2'] : NULL);
+        $dataQ03 = (isset($_POST['q3']) ? $_POST['q3'] : NULL);
+        $dataQ04 = (isset($_POST['q4']) ? $_POST['q4'] : NULL);
+        $dataQ05 = (isset($_POST['q5']) ? $_POST['q5'] : NULL);
+        $dataQ06 = (isset($_POST['q6']) ? $_POST['q6'] : NULL);
+        $dataQ07 = (isset($_POST['q7']) ? $_POST['q7'] : NULL);
+        $dataQ08 = (isset($_POST['q8']) ? $_POST['q8'] : NULL);
+        $dataQ09 = (isset($_POST['q9']) ? $_POST['q9'] : NULL);
         $dataQ10 = (isset($_POST['q10']) ? $_POST['q10'] : NULL);
 
 
@@ -46,23 +49,24 @@ function process_post($param) {
                                 )
                            );
 
-            $handle = $conn->prepare("
-                INSERT INTO pertanyaan (q1, q2, q3, q4, q5, q6, q7, q8, q9, q10)
-                VALUES (:q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :q10)
-            ");
+            $handle = $conn->prepare("INSERT INTO survey (id_kategori, id_mesin) VALUES ( (SELECT id_kategori FROM kategori WHERE kategori = :kategori), :mesin);
+            INSERT INTO pertanyaan (id_survey, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10) VALUES ((SELECT LAST_INSERT_ID()), :q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :q10);");
 
-            $handle->bindParam(':q1', $dataq1);
-            $handle->bindParam(':q2', $dataq2);
-            $handle->bindParam(':q3', $dataq3);
-            $handle->bindParam(':q4', $dataq4);
-            $handle->bindParam(':q5', $dataq5);
-            $handle->bindParam(':q6', $dataq6);
-            $handle->bindParam(':q7', $dataq7);
-            $handle->bindParam(':q8', $dataq8);
-            $handle->bindParam(':q9', $dataq9);
-            $handle->bindParam(':q10', $dataq10);
+            # Membuat data array asosiatif
+            $data = array(':kategori' => $dataKategori, 
+                            ':mesin' => $dataMesin, 
+                            ':q1' => $dataQ01, 
+                            ':q2' => $dataQ02, 
+                            ':q3' => $dataQ03, 
+                            ':q4' => $dataQ04, 
+                            ':q5' => $dataQ05, 
+                            ':q6' => $dataQ06, 
+                            ':q7' => $dataQ07, 
+                            ':q8' => $dataQ08, 
+                            ':q9' => $dataQ09, 
+                            ':q10' => $dataQ10);
 
-            $handle->execute();
+            $handle->execute($data);
 
             if($handle->rowCount()){
                 $status = 'Berhasil';
@@ -82,28 +86,8 @@ function process_post($param) {
 }
 
 switch ($method) {
-    case 'PUT':
-        process_put($request);
-        break;
     case 'POST':
         process_post($request);
         break;
-    case 'GET':
-        process_get($request);
-        break;
-    case 'HEAD':
-        process_head($request);
-        break;
-    case 'DELETE':
-        process_delete($request);
-        break;
-    case 'OPTIONS':
-        process_options($request);
-        break;
-    default:
-        handle_error($request);
-        break;
 }
-# Gunakan aplikasi Postman untuk pengujian API/Web Service | www.getpostman.com
-# Membuat data dengan POST: Uji dengan membuka http://localhost/praktikumweb/ws-json-post.php/mahasiswa menggunakan metode POST. Data nama dan npm harus disertakan
 ?>
