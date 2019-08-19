@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" />
     <title>Fetch API: POST</title>
 </head>
+
 <body>
     <h1>Fetch API: POST</h1>
+    <input type="text" name="kategori" id="kategori" placeholder="Nama kategori">
+    <input type="text" name="mesin" id="mesin" placeholder="Nomor mesin">
     <input type="number" name="q1" id="q1" placeholder="">
     <input type="number" name="q2" id="q2" placeholder="">
     <input type="number" name="q3" id="q3" placeholder="">
@@ -23,9 +27,23 @@
         var tampilanData = document.getElementById("tampilanData");
 
         function fetchAPIPOST() {
+            var inputkategori = document.getElementById("kategori").value;
+            var inputmesin = document.getElementById("mesin").value;
             var inputq1 = document.getElementById("q1").value;
             var inputq2 = document.getElementById("q2").value;
-            var dataInput = "q1=" + inputq1 + "&q2=" + inputq2 + "q3=" + inputq3  + "q4=" + inputq4 + "q5=" + inputq5 + "q6=" + inputq6 + "q7=" + inputq7 + "q8=" + inputq8 + "q9=" + inputq9 + "q10=" + inputq10;
+            var inputq3 = document.getElementById("q3").value;
+            var inputq4 = document.getElementById("q4").value;
+            var inputq5 = document.getElementById("q5").value;
+            var inputq6 = document.getElementById("q6").value;
+            var inputq7 = document.getElementById("q7").value;
+            var inputq8 = document.getElementById("q8").value;
+            var inputq9 = document.getElementById("q9").value;
+            var inputq10 = document.getElementById("q10").value;
+
+            var dataInput = "&mesin=" + inputkategori + "&mesin=" + inputmesin + "&q1=" + inputq1 + "&q2=" + inputq2 +
+                "q3=" + inputq3 + "q4=" + inputq4 + "q5=" + inputq5 + "q6=" + inputq6 + "q7=" + inputq7 + "q8=" +
+                inputq8 + "q9=" + inputq9 + "q10=" + inputq10;
+
             url = 'api.php/pertanyaan';
             fetch(url, {
                     method: 'POST',
@@ -35,10 +53,10 @@
                     body: dataInput
                 })
                 .then((resp) => resp.json())
-                .then(function (data) {
+                .then(function(data) {
                     tampilkanData(data);
                 })
-                .catch(function (error) {
+                .catch(function(error) {
                     console.log(JSON.stringify(error));
                 });
         }
@@ -51,4 +69,5 @@
         document.getElementById("btnKirimData").addEventListener("click", fetchAPIPOST);
     </script>
 </body>
+
 </html>
