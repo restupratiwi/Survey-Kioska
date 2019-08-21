@@ -305,14 +305,9 @@
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" id="hiddenkategori" name="kategori" value="fasilitas" />
         </div>
         </fieldset>
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <input type="hidden" id="hiddenkategori" name="kategori" value="fasilitas" />
-                <input type="submit" class="btn btn-primary btn-lg" value="SUBMIT"></button>
-            </div>
-        </div>
         </form>
     </div>
 
@@ -323,7 +318,10 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col-lg-5">
-                    <a href="index.html" class="btn btn-primary btn-lg">Kembali</a>
+                    <a href="index.html"><button type="submit" class="btn btn-primary btn-lg">Kembali</button></a>
+                </div>
+                <div class="col-lg-6">
+                    <button type="submit" id="btnKirimData" class="btn btn-primary btn-lg">Submit</button>
                 </div>
             </div>
         </div>
@@ -332,14 +330,60 @@
     <script>
         let obyeksurvey = document.querySelector("#obyeksurvey");
         let hiddenkategori = document.querySelector("#hiddenkategori");
+
         // GET parameter
         url = new URL(window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + window.location
             .search);
         let searchParams = new URLSearchParams(url.search);
         let kategori = url.searchParams.get('kategori');
 
+        // Menyematkan nilai kategori
         obyeksurvey.innerText = kategori;
         hiddenkategori.value = kategori;
+
+        //Fungsi kirim data
+        function fetchAPIPOST() {
+            var inputkategori = kategori;
+            var inputmesin = 1;
+            var inputq1 = document.querySelector("[name='q1']").value;
+            var inputq2 = document.querySelector("[name='q2']").value;
+            var inputq3 = document.querySelector("[name='q3']").value;
+            var inputq4 = document.querySelector("[name='q4']").value;
+            var inputq5 = document.querySelector("[name='q5']").value;
+            var inputq6 = document.querySelector("[name='q6']").value;
+            var inputq7 = document.querySelector("[name='q7']").value;
+            var inputq8 = document.querySelector("[name='q8']").value;
+            var inputq9 = document.querySelector("[name='q9']").value;
+            var inputq10 = document.querySelector("[name='q10']").value;
+
+            var dataInput = "&kategori=" + inputkategori + "&mesin=" + inputmesin + "&q1=" + inputq1 + "&q2=" + inputq2 +
+                "q3=" + inputq3 + "q4=" + inputq4 + "q5=" + inputq5 + "q6=" + inputq6 + "q7=" + inputq7 + "q8=" +
+                inputq8 + "q9=" + inputq9 + "q10=" + inputq10;
+
+            url = 'api.php/pertanyaan';
+            fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: dataInput
+                })
+                .then((resp) => resp.json())
+                .then(function(data) {
+                    tampilkanData(data);
+                    window.location = "./terimakasih.html";
+                })
+                .catch(function(error) {
+                    console.log(JSON.stringify(error));
+                });
+        }
+
+        // Fungsi untuk menampilkan data
+        function tampilkanData(dataRAW) {
+            console.log("Status: " + dataRAW.status + "<br/>");
+            console.log("ID data: " + dataRAW.id);
+        }
+        document.getElementById("btnKirimData").addEventListener("click", fetchAPIPOST);
     </script>
 </body>
 
