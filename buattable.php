@@ -26,13 +26,13 @@ try {
     -- Dumping data for table kategori
     --
 
-    INSERT INTO kategori (kategori) VALUES
-    ('umum'),
-    ('fasilitas'),
-    ('peminjaman'),
-    ('kioska navigasi'),
-    ('navigasi ar'),
-    ('vr tour');
+    INSERT INTO `kategori` (`id_kategori`,`kategori`) VALUES
+    (1,'umum'),
+    (2,'fasilitas'),
+    (3,'peminjaman'),
+    (4,'kioska navigasi'),
+    (5,'navigasi ar'),
+    (6,'vr tour');
 
     -- --------------------------------------------------------
 

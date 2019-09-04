@@ -1,81 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<link rel="icon" type="image/png" href="img/logoperpus2.png">
-	<meta charset="utf-8">
-		<title>Customer Satisfaction</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	<script type="text/javascript" src="js/script.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-	    
+    <link rel="icon" type="image/png" href="img/logoperpus2.png">
+    <meta charset="utf-8">
+    <title>Customer Satisfaction</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
 </head>
 
 <body>
-<!-- ----------------------------------header 1 ----------------------------------->
-<div class="wrap">
-	<div class="container">
-		<div class="col-lg-1">
-			<img class="logo" 	src="img/logoperpus2.png" height="50px" align="left">
-		</div>
-		
-		<div class="col-lg-4">
-			<h1 class="judul">UPT. PERPUSTAKAAN UNIVERSITAS LAMPUNG</h1>
-		</div>
-		
-		<div class="visi">	
-			<div class="col-lg-7">
-				<p>Visi: Pusat Pengetahuan modern berbasis Teknologi Informasi (TI) yang menunjang Visi Unila</p>
-			</div>
-		</div>
-	</div>
-	<legend></legend>
-	<!--------------------------------- Header 1 selesai --------------------------->
+    <!-- ----------------------------------header 1 ----------------------------------->
+    <div class="wrap">
+        <div class="container">
+            <div class="col-lg-1">
+                <img class="logo" src="img/logoperpus2.png" height="50px" align="left">
+            </div>
 
-	<!---------------------------------- Header 2 ---------------------------------->
-	<div class="surveysingkat">
-		<h2>SURVEY KEPUASAN SINGKAT TERHADAP PERPUSTAKAAN</h2>
-			<form action="action.php" method="post" autocomplete="on" id="">
-				<fieldset>
-					<div class="btn-group btn-group-toggle" data-toggle="buttons" >
-				       	<label class="btn btn-success " >
+            <div class="col-lg-4">
+                <h1 class="judul">UPT. PERPUSTAKAAN UNIVERSITAS LAMPUNG</h1>
+            </div>
+
+            <div class="visi">
+                <div class="col-lg-7">
+                    <p>Visi: Pusat Pengetahuan modern berbasis Teknologi Informasi (TI) yang menunjang Visi Unila</p>
+                </div>
+            </div>
+        </div>
+        <legend></legend>
+        <!--------------------------------- Header 1 selesai --------------------------->
+
+        <!---------------------------------- Header 2 ---------------------------------->
+        <div class="surveysingkat">
+            <h2>SURVEY KEPUASAN SINGKAT TERHADAP PERPUSTAKAAN</h2>
+            <form action="action.php" method="post" autocomplete="on" id="">
+                <fieldset>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-success ">
 						    <input type="radio" name="q1" value="100" ><img class=" q-gambar img-responsive" src="img/sangatpuas.png" alt="sangat puas">
 				    	</label>
-					    <label class="btn btn-primary" >
+                        <label class="btn btn-primary">
 					 	   <input type="radio" name="q1" value="75" ><img class="q-gambar img-responsive"src="img/puas.png" alt="puas">
 				    	</label>
-					    <label class="btn btn-warning" >
+                        <label class="btn btn-warning">
 						    <input type="radio" name="q1" value="25" ><img class=" q-gambar img-responsive"src="img/cukuppuas.png" alt="cukup puas">
 				    	</label>
-					    <label class="btn btn-danger" >
+                        <label class="btn btn-danger">
 						    <input type="radio" name="q1" value="100" ><img class="q-gambar img-responsive" src="img/tidakpuas.png" alt="tidak puas">
 				    	</label>
-					</div>
-				</fieldset>
-			</form>
-	</div>
-	<!--------------------------------- Header 2 selesai ---------------------------->
-	
-	<!------------------------------------ Header 3  --------------------------------->
-	<section class="pilihan" id="" >
-		<div class="container">
-			<h3>SILAHKAN BERIKAN PENILAIAN TERHADAP LAYANAN KAMI BERDASARKAN</h3>
-				<div class="col-lg-4 ">
-					<a href="fasilitas.html"><img class="p-gambar" src="img/fasilitas2.jpg" alt=""></a>
-					<a href="fasilitas.html" class="box"><i class="glyphicon glyphicon-home" ></i> FASILITAS</a>
-				</div>
-				<div class="col-lg-4 ">
-					<a href="pelayananumum.html"><img class="p-gambar" src="img/pelayanan2.jpg" alt=""></a>
-					<a href="pelayananumum.html" class="box"><i class="glyphicon glyphicon-user" ></i> PELAYANAN UMUM</a>
-				</div>
-				<div class="col-lg-4 ">
-					<a href="peminjaman.html"><img class="p-gambar" src="img/peminjaman2.jpg" alt=""></a>
-					<a href="peminjaman.html" class="box"><i class="glyphicon glyphicon-book" ></i> PEMINJAMAN</a>
-				</div>
-		</div>
-	</section>
-	<!-- Header 3 selesai -->
-	
-</div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <!--------------------------------- Header 2 selesai ---------------------------->
+
+        <!------------------------------------ Header 3  --------------------------------->
+        <section class="pilihan" id="">
+            <div class="container">
+                <h3>SILAHKAN BERIKAN PENILAIAN TERHADAP LAYANAN KAMI BERDASARKAN</h3>
+                <div class="col-lg-4 ">
+                    <a href="survey.html?kategori=fasilitas"><img class="p-gambar" src="img/fasilitas2.jpg" alt=""></a>
+                    <a href="survey.html?kategori=fasilitas" class="box"><i class="glyphicon glyphicon-home" ></i> FASILITAS</a>
+                </div>
+                <div class="col-lg-4 ">
+                    <a href="survey.html?kategori=umum"><img class="p-gambar" src="img/pelayanan2.jpg" alt=""></a>
+                    <a href="survey.html?kategori=umum" class="box"><i class="glyphicon glyphicon-user" ></i> PELAYANAN UMUM</a>
+                </div>
+                <div class="col-lg-4 ">
+                    <a href="survey.html?kategori=peminjaman"><img class="p-gambar" src="img/peminjaman2.jpg" alt=""></a>
+                    <a href="survey.html?kategori=peminjaman" class="box"><i class="glyphicon glyphicon-book" ></i> PEMINJAMAN</a>
+                </div>
+            </div>
+        </section>
+        <!-- Header 3 selesai -->
+
+    </div>
 </body>
+
 </html>
