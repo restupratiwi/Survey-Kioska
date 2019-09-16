@@ -1,4 +1,4 @@
-$(.btn).button('toggle')
+$(".btn").button('toggle')
 
 (function ($) {
   $('.spinner .btn:first-of-type').on('click', function() {
