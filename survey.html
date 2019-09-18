@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- <script async type="text/javascript" src="js/script.js"></script> -->
     <!-- <script type="text/javascript" src="js/bootstrap.js"></script> -->
-
-
 </head>
 
 <body>
@@ -38,8 +36,7 @@
         <div class="container2">
             <form action="terimakasih.html" method="GET" autocomplete="on" id="">
                 <fieldset>
-                    <div class="legend">Saya merasa, <span id="obyeksurvey">Obyek Survey</span> di UPT. Perpustakaan
-                        Universitas Lampung, ....</div>
+                    <div class="legend">Saya merasa, <span id="obyeksurvey">Obyek Survey</span> di UPT. Perpustakaan Universitas Lampung, ....</div>
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="pertanyaan">
@@ -74,7 +71,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="pertanyaan">
-                                <label for="q6" class="pertanyaan">(6). Tidak konsisten</label>
+                                <label for="q1" class="pertanyaan">(6). Tidak konsisten</label>
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -101,7 +98,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="pertanyaan">
-                                <label for="q2" class="pertanyaan">(2). Rumit dipahami </label>
+                                <label for="q1" class="pertanyaan">(2). Rumit dipahami </label>
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -126,7 +123,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="pertanyaan">
-                                <label for="q7" class="pertanyaan">(7). <em>User friendly</em></label>
+                                <label for="q1" class="pertanyaan">(7). <em>User friendly</em></label>
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -153,7 +150,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="pertanyaan">
-                                <label for="q3" class="pertanyaan">(3). Mudah digunakan</label>
+                                <label for="q1" class="pertanyaan">(3). Mudah digunakan</label>
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -178,7 +175,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="pertanyaan">
-                                <label for="q8" class="pertanyaan">(8). Membingungkan</label>
+                                <label for="q1" class="pertanyaan">(8). Membingungkan</label>
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -205,7 +202,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="pertanyaan">
-                                <label for="q4" class="pertanyaan">(4). Membutuhkan bantuan</label>
+                                <label for="q1" class="pertanyaan">(4). Membutuhkan bantuan</label>
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -230,7 +227,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="pertanyaan">
-                                <label for="q9" class="pertanyaan">(9). Percaya diri</label>
+                                <label for="q1" class="pertanyaan">(9). Percaya diri</label>
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -257,7 +254,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="pertanyaan">
-                                <label for="q5" class="pertanyaan">(5). Berfungsi</label>
+                                <label for="q1" class="pertanyaan">(5). Berfungsi</label>
                             </div>
                         </div>
                         <div class="col-lg-2">
@@ -282,14 +279,14 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="pertanyaan">
-                                <label for="q10" class="pertanyaan">(10). Perlu belajar</label>
+                                <label for="q1" class="pertanyaan">(10). Perlu belajar</label>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-success ">
-                                    <input type="radio" name="q10" value="0"><img class=" q-gambar img-responsive"
-                                        src="img/sangatpuas.png" alt="sangat puas">
+                                    <input type="radio" name="q10" value="0">
+                                    <img class=" q-gambar img-responsive"                                      src="img/sangatpuas.png" alt="sangat puas">
                                 </label>
                                 <label class="btn btn-primary">
                                     <input type="radio" name="q10" value="25"><img class="q-gambar img-responsive"
@@ -328,79 +325,7 @@
         </div>
     </footer>
     </div>
-    <script>
-        let obyeksurvey = document.querySelector("#obyeksurvey");
-        let hiddenkategori = document.querySelector("#hiddenkategori");
-        let btnQ = document.querySelectorAll("label.btn img");
-
-        // Memberikan tanda checked pada tombol yang ditekan
-        btnQ.forEach(btnQa => btnQa.addEventListener("click", function () {
-            btnQa.previousElementSibling.setAttribute("checked", true);
-
-        }));
-
-        // GET parameter
-        url = new URL(window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + window.location.search);
-        let searchParams = new URLSearchParams(url.search);
-        let kategori = url.searchParams.get('kategori');
-
-        // Menyematkan nilai kategori
-        obyeksurvey.innerText = kategori;
-        hiddenkategori.value = kategori;
-
-        //Fungsi kirim data
-        function fetchAPIPOST() {
-            let inputkategori = kategori;
-            let inputmesin = 1;
-            let inputq1, inputq2, inputq3, inputq4, inputq5, inputq6, inputq7, inputq8, inputq9, inputq10 = 0;
-            inputq1 = document.querySelector("[name='q1'][checked]") ? document.querySelector("[name='q1'][checked]")
-                .value : 50;
-            inputq2 = document.querySelector("[name='q2'][checked]") ? document.querySelector("[name='q2'][checked]")
-                .value : 50;
-            inputq3 = document.querySelector("[name='q3'][checked]") ? document.querySelector("[name='q3'][checked]")
-                .value : 50;
-            inputq4 = document.querySelector("[name='q4'][checked]") ? document.querySelector("[name='q4'][checked]")
-                .value : 50;
-            inputq5 = document.querySelector("[name='q5'][checked]") ? document.querySelector("[name='q5'][checked]")
-                .value : 50;
-            inputq6 = document.querySelector("[name='q6'][checked]") ? document.querySelector("[name='q6'][checked]")
-                .value : 50;
-            inputq7 = document.querySelector("[name='q7'][checked]") ? document.querySelector("[name='q7'][checked]")
-                .value : 50;
-            inputq8 = document.querySelector("[name='q8'][checked]") ? document.querySelector("[name='q8'][checked]")
-                .value : 50;
-            inputq9 = document.querySelector("[name='q9'][checked]") ? document.querySelector("[name='q9'][checked]")
-                .value : 50;
-            inputq10 = document.querySelector("[name='q10'][checked]") ? document.querySelector("[name='q10'][checked]")
-                .value : 50;
-
-            let dataInput = "kategori=" + inputkategori + "&mesin=" + inputmesin + "&q1=" + inputq1 + "&q2=" + inputq2 + "&q3=" + inputq3 + "&q4=" + inputq4 + "&q5=" + inputq5 + "&q6=" + inputq6 + "&q7=" + inputq7 + "&q8=" + inputq8 + "&q9=" + inputq9 + "&q10=" + inputq10;
-
-            url = 'api.php/pertanyaan';
-            fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: dataInput
-                })
-                .then((resp) => resp.json())
-                .then(function (data) {
-                    tampilkanData(data);
-                    window.location = "./terimakasih.html";
-                })
-                .catch(function (error) {
-                    console.log(JSON.stringify(error));
-                });
-        }
-
-        // Fungsi untuk menampilkan data
-        function tampilkanData(dataRAW) {
-            console.log("Status: " + dataRAW.status + "<br/>");
-            console.log("ID data: " + dataRAW.id);
-        }
-        document.getElementById("btnKirimData").addEventListener("click", fetchAPIPOST);
-    </script>
+    <script src="script/js/survey.js"></script>
 </body>
 
 </html>
