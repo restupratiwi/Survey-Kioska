@@ -1,0 +1,199 @@
+body {
+ 
+  background: white;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  
+  
+}
+
+
+/*--------------------------------------Halaman Fasilitas------------------------------*/
+
+.wrap .container {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 0;
+  position: relative;
+  z-index: 0;
+  padding: 5px;
+  background: #02132b;
+}
+
+.logo{
+  padding-left: 30px;
+}
+
+.wrap .container .judul{
+  font-family: "Merriweather Sans",sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    padding-left: 45px;
+    text-align: left;
+    color: white;
+}
+
+.wrap .container .visi{
+    text-align: left;
+    font-family: "Merriweather Sans",sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    padding-left: 100px;
+    color: white;
+    padding-top: 20px;
+  
+}
+
+h2{
+   font-family: "Merriweather Sans";
+}
+
+hr {
+  width: 580px;
+  float: left;
+  border-top: 2px solid #999;
+ }
+
+ .wrap .container2{
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 20px;
+  position: relative;
+  z-index: 0;
+  padding: 5px;
+  float: center;
+}
+
+.keterangan{
+  width: auto;
+  height: 43px; 
+  border-radius: 20px;
+  background: transparent;
+  margin-left: 25px;
+  margin-right: 50px;
+  margin-top: 40px;
+  font-size: 12pt;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: bold;
+  padding-left: 25px;
+  padding-top: 9px;
+}
+
+.container2 .legend{
+  font-size: 26pt;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: bold;
+  height:30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: black;
+}
+
+
+#gambar{
+  height: 10px;
+  width:10px;
+
+}
+
+.pertanyaan{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 21pt;
+  line-height: 1;
+  color: black;
+}
+
+.q-gambar{
+  width: 23px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  z-index: 5;
+  transition: .25s linear;
+  -webkit-transition: border .25s linear;
+}
+
+
+.button {
+   background-color: black;
+   color: white;
+   height: 30px;
+   width: 150px; 
+   text-align: center;
+}
+
+.button.red {
+  background-color: red;
+}
+
+.button.red.opaque { 
+  opacity: 0.7;
+}
+javascript (so far)
+
+
+
+.container2 .col-lg-2{
+  margin-top: 10px;
+}
+
+.container2 .legend{
+  margin-bottom: 40px;
+}
+
+.kanan{
+
+    position: absolute;
+    right: 0px;
+    width: 100px;
+    height: 20px;
+    padding: 0px;
+}
+
+footer{
+  float: left;
+  margin-top: 50px;
+  margin-left: -150px;
+}
+
+footer .col-lg-5{
+  margin-left: auto;
+}
+
+footer .col-lg-6 .btn{
+  margin-left: 400px;
+  
+}
+
+
+input[type=radio]:checked ~ .q-gambar {
+  border: 5px solid transparent;
+}
+
+input[type=radio]:checked ~ .q-gambar::before{
+  background: transparent;
+}
+
+input[type=radio]:checked ~ label{
+  color: #ED146F;
+}
+
+/*-----------------Bagian Ukuran Layar------------------------------------*/
+@media screen and (max-width:1440px){
+
+  #maincontent{
+    width: auto;
+    float: none;
+  }
+  #sidebar{
+    width: auto;
+    float: none;
+  }
+}
+
