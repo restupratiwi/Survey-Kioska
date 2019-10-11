@@ -2,9 +2,9 @@
 
 // Age categories
 var categories = [
-    'Q10', 'Q9', 'Q8', 'Q7',
-    'Q6', 'Q5', 'Q4', 'Q3', 'Q2',
-    'Q1' ];
+    'Perlu belajar lebih dulu', 'Dapat menggunakan sendiri', 'Membingungkan', 'User friendly', 'Tidak konsisten',
+    'Befungsi', 'Membutuhkan bantuan', 'Mudah digunakna', 'Rumit Dipahami',
+    'Akan menggunakan secara rutin' ];
 
 Highcharts.chart('container', {
     chart: {
@@ -14,7 +14,7 @@ Highcharts.chart('container', {
         text: 'Survei Kioska'
     },
     subtitle: {
-        text: ''
+        text: 'UPT. Perpustakaan Universitas Lampung'
     },
     xAxis: [{
         categories: categories,
@@ -58,15 +58,15 @@ Highcharts.chart('container', {
     series: [{
         name: 'Genap',
         data: [
-            -2.2, 0, -2.2, 0,
-            -2.7, 0, -3.3, 0,
-            -2.9, 0
+            75, 0, 50, 0,
+            100, 0, 25, 0,
+            75, 0
         ]
     }, {
         name: 'Ganjil',
         data: [
-           0.0, 2.1, 0 ,2.4, 0,
-            2.9, 0, 3.1, 0 , 3.4,
+           0.0, -75, 0 ,-25, 0,
+            -100, 0, -50, 0 , -75,
             
         ]
     }]
