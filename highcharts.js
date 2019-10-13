@@ -3,9 +3,9 @@
 // Age categories
 var categories = [
     'Perlu belajar lebih dulu', 'Dapat menggunakan sendiri', 'Membingungkan', 'User friendly', 'Tidak konsisten',
-    'Befungsi', 'Membutuhkan bantuan', 'Mudah digunakna', 'Rumit Dipahami',
+    'Befungsi', 'Membutuhkan bantuan', 'Mudah digunakan', 'Rumit Dipahami',
     'Akan menggunakan secara rutin' ];
-
+function chart(dt) {
 Highcharts.chart('container', {
     chart: {
         type: 'bar'
@@ -32,6 +32,8 @@ Highcharts.chart('container', {
         }
     }],
     yAxis: {
+            min: -100,
+            max: 100,
         title: {
             text: null
         },
@@ -56,18 +58,35 @@ Highcharts.chart('container', {
     },
 
     series: [{
-        name: 'Genap',
-        data: [
-            75, 0, 50, 0,
-            100, 0, 25, 0,
-            75, 0
-        ]
+        name: 'Sentimen Negatif',
+        data: [ dt.data[0].q1, 0, 50, 0, 100, 0, 25, 0, 75, 0]
     }, {
-        name: 'Ganjil',
-        data: [
-           0.0, -75, 0 ,-25, 0,
-            -100, 0, -50, 0 , -75,
-            
-        ]
+        name: 'Sentimen Positif',
+        data: [ dt.data[0].q1, -75, 0 ,-25, 0, -100, 0, -50, 0 , dt.data[0].q1 ]
     }]
 });
+}
+
+function fetchAPIGET() {
+    url = 'api.php/surveikepuasan';
+    fetch(url, {
+            method: 'GET'
+            })
+        .then((resp) => resp.json())
+        .then(function (data) {
+            tampilkanData(data);
+        chart(data);
+        })
+        .catch(function (error) {
+            console.log(JSON.stringify(error));
+        });
+}
+
+// Fungsi untuk menampilkan data
+function tampilkanData(dataRAW) {
+    console.log("Status: " + dataRAW.status + "<br/>");
+    console.log(dataRAW.data);
+    console.log(dataRAW.data[0].q1);
+}
+
+fetchAPIGET();
