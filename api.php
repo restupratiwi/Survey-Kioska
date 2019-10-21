@@ -168,6 +168,8 @@ function process_get($param) {
 
             # Membuat data array asosiatif
             $data = array(':kategori' => $dataKategori);
+            $data = array(':tahun' => $dataTahun);
+            $data = array(':bulan' => $dataBulan);
 
             $handle->execute($data);
 
