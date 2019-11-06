@@ -164,7 +164,8 @@ function process_get($param) {
                                 )
                            );
 
-            $handle = $conn->prepare("SELECT AVG(q1) as q1, AVG(q2), AVG(q3), AVG(q4), AVG(q5), AVG(q6), AVG(q7), AVG(q8), AVG(q9), AVG(q10) FROM pertanyaan");
+            $handle = $conn->prepare("SELECT AVG(q1) as q1, AVG(q2) as q2, AVG(q3) as q3, AVG(q4) as q4, AVG(q5) as q5, 
+            AVG(q6) as q6, AVG(q7) as q7, AVG(q8) as q8, AVG(q9) as q9, AVG(q10) as q10 FROM pertanyaan");
 
             # Membuat data array asosiatif
             $data = array(':kategori' => $dataKategori);
