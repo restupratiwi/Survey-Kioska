@@ -1,6 +1,6 @@
 body {
  
-  background: url(../img/perpus01.jpeg);
+  background: white;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -72,12 +72,11 @@ hr {
 .keterangan{
   width: auto;
   height: 43px; 
-  border: solid 1px grey;
   border-radius: 20px;
-  background: #8dd4fc;
-  margin-left: 45px;
+  background: transparent;
+  margin-left: 25px;
   margin-right: 50px;
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 12pt;
   font-family: "Merriweather Sans", sans-serif;
   font-weight: bold;
@@ -90,9 +89,13 @@ hr {
   font-family: "Merriweather Sans", sans-serif;
   font-weight: bold;
   height:30px;
-  margin-top: 0px;
+  margin-top: 30px;
   margin-bottom: 0px;
   color: black;
+}
+
+.fa fa-square{
+  
 }
 
 
@@ -157,6 +160,20 @@ javascript (so far)
     padding: 0px;
 }
 
+footer{
+  float: left;
+  margin-top: 50px;
+  margin-left: -150px;
+}
+
+footer .col-lg-5{
+  margin-left: auto;
+}
+
+footer .col-lg-6 .btn{
+  margin-left: 250px;
+  
+}
 
 input[type=radio]:checked ~ .q-gambar {
   border: 5px solid transparent;
@@ -168,19 +185,6 @@ input[type=radio]:checked ~ .q-gambar::before{
 
 input[type=radio]:checked ~ label{
   color: #ED146F;
-}
-
-
-
-
-footer{
-  float: left;
-  margin-top: 50px;
-  margin-left: -150px;
-}
-
-footer .col-lg-6{
-  margin-left: 90px;
 }
 
 /*-----------------Bagian Ukuran Layar------------------------------------*/

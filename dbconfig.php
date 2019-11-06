@@ -2,7 +2,7 @@
 # dbconfig.php
 # konfigurasi database
 $host = 'localhost';
-$dbname = 'surveykioska';
 $username = 'root';
+$dbname = 'surveykioska';
 $password = '';
 ?>
