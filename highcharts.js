@@ -2,7 +2,7 @@
 
 // Age categories
 var categories = [
-    'Perlu belajar lebih dulu',
+    'Perlu belajar lebih duluuuu',
     'Dapat menggunakan sendiri',
     'Membingungkan',
     'User friendly',
@@ -78,13 +78,13 @@ function chart(dt) {
         },
 
         series: [{
-            name: 'Sentimen Negatif',
-            // hanya indeks gen
-            data: [0, Math.round(-dt.data[0].q2), 0, Math.round(-dt.data[0].q4), 0, Math.round(-dt.data[0].q6), 0, Math.round(-dt.data[0].q8), 0, Math.round(-dt.data[0].q10)]
-        }, {
             name: 'Sentimen Positif',
+            // hanya indeks gen
+            data: [0, Math.round(dt.data[0].q2), 0, Math.round(dt.data[0].q4), 0, Math.round(dt.data[0].q6), 0, Math.round(dt.data[0].q8), 0, Math.round(dt.data[0].q10)]
+        }, {
+            name: 'Sentimen Negatif',
             // hanya indeks gan
-            data: [Math.round(dt.data[0].q1), 0, Math.round(dt.data[0].q3), 0, Math.round(dt.data[0].q5), 0, Math.round(dt.data[0].q7), 0, Math.round(dt.data[0].q9), 0]
+            data: [Math.round(-dt.data[0].q1), 0, Math.round(-dt.data[0].q3), 0, Math.round(-dt.data[0].q5), 0, Math.round(-dt.data[0].q7), 0, Math.round(-dt.data[0].q9), 0]
         }]
     });
 }
