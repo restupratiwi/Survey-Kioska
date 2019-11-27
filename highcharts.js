@@ -2,7 +2,7 @@
 
 // Age categories
 var categories = [
-    'Perlu belajar lebih duluuuu',
+    'Perlu belajar lebih dulu',
     'Dapat menggunakan sendiri',
     'Membingungkan',
     'User friendly',

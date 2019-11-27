@@ -1,13 +1,68 @@
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/data.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="css/highcharts.css"></script>
-<body>
-    
-<div id="container" style="min-width: 200px; height: 500px; margin-top: 30px; margin-right: 50px; margin-left: 50px">
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<script src="highcharts.js"></script>
+<head>
+
+
+    <meta charset="utf-8">
+    <title>User Satisfaction</title>
+    <link rel="stylesheet" type="text/css" href="css/highcharts.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="highcharts.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+
+<body>
+    <div class="menu-bar">
+        <ul>
+            <li class="active"><a href="#">Tampilkan Seluruh</a></li>
+            <li><a href="#">Tampilkan Berdasarkan</a></li>
+            <div class="sub-menu-1">
+                <ul>
+                    <li a href="#">Fasilitas</li>
+                    <li a href="#">Pelayanan Umum</li>
+                    <li a href="#">Peminjaman</li>
+                </ul>
+            </div>
+        </ul>
+    </div>
+
+    
+    <div class="col-sm-8 col-sm-offset-2">
+        <select>
+            <option value="2019">-Tahun-</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+        </select>          
+        <select>
+            <label for="sel1">Bulan</label>
+            <option value="januari">Januari</option>
+            <option value="februari">Februari</option>
+            <option value="maret">Maret</option>
+            <option value="april">April</option>
+            <option value="mei">Mei</option>
+            <option value="juni">Juni</option>
+            <option value="juli">Juli</option>
+            <option value="agustus">Agustus</option>
+            <option value="september">September</option>
+            <option value="oktober">Oktober</option>
+            <option value="november">November</option>
+            <option value="desember">Desember</option>
+        </select>        
+        <select>
+            <option value="fasilitas">Fasilitas</option>
+            <option value="pelayanan umum">Pelayanan Umum</option>
+            <option value="peminjaman">Peminjaman</option>
+            <option value="singkat">Survei Singkat</option>
+        </select>
+    </div>
+        
+    <div id="container" style="min-width: 200px; height: 500px; margin-top: 30px; margin-right: 50px; margin-left: 50px">
+    </div>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
 </body>
 </html>

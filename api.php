@@ -165,7 +165,13 @@ function process_get($param) {
                            );
 
             $handle = $conn->prepare("SELECT AVG(q1) as q1, AVG(q2) as q2, AVG(q3) as q3, AVG(q4) as q4, AVG(q5) as q5, 
-            AVG(q6) as q6, AVG(q7) as q7, AVG(q8) as q8, AVG(q9) as q9, AVG(q10) as q10 FROM pertanyaan");
+            AVG(q6) as q6, AVG(q7) as q7, AVG(q8) as q8, AVG(q9) as q9, AVG(q10) as q10 FROM (SELECT survey.id_survey, waktu, q1,  q2,  q3,  q4, q5, q6, q7, q8, q9, q10 FROM  pertanyaan, survey WHERE pertanyaan.id_survey = survey.id_survey AND waktu>'2019-09-18 23:59:00') a");
+
+            // untuk memilih tidak dibatasi waktu (seluruhnya)
+            // SELECT AVG(q1) as q1, AVG(q2) as q2, AVG(q3) as q3, AVG(q4) as q4, AVG(q5) as q5, AVG(q6) as q6, AVG(q7) as q7, AVG(q8) as q8, AVG(q9) as q9, AVG(q10) as q10 FROM pertanyaan
+            
+            //untuk memilih dibatasi waktu  
+            // SELECT survey.id_survey, waktu, q1,  q2,  q3,  q4, q5, q6, q7, q8, q9, q10 FROM  pertanyaan, survey WHERE pertanyaan.id_survey = survey.id_survey AND waktu>'2019-09-18 23:59:00' 
 
             # Membuat data array asosiatif
             $data = array(':kategori' => $dataKategori);
